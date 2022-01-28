@@ -3,8 +3,8 @@ FROM node:17
 LABEL name="Daegon Lee" 
 LABEL email="daegon.lee@navercorp.com"
 
-RUN sudo npm i -g @nestjs/cli
-RUN sudo npm i -g pm2
+RUN npm i -g @nestjs/cli
+RUN npm i -g pm2
 
 ADD dist /usr/src/nestJS
 ADD package.json /usr/src/nestJS
