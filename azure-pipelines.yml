@@ -1,0 +1,16 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+resources:
+  pipelines:
+  - pipeline: firstpipeline # Name of the pipeline resource.
+    source: daegon0130.node-basic # The name of the pipeline referenced by this pipeline resource.
+    trigger: true # Run app-ci pipeline when any run of daegon0130.node-basic completes
+  - pipeline: firstpipeline # Name of the pipeline resource.
+    source: daegon0130.movie_app_2020 # The name of the pipeline referenced by this pipeline resource.
+    trigger: true # Run app-ci pipeline when any run of daegon0130.node-basic completes
+steps:
+- bash: echo "runs after daegon0130.node-basic completes"
+- bash: echo "runs after daegon0130.movie_app_2020 completes"
